@@ -1,0 +1,15 @@
+
+- story: interactive_story_1
+  steps:
+  - intent: nlu_fallback
+  - intent: pergunta_documento
+  - action: action_buscar_documento
+  - intent: nlu_fallback
+  - intent: pergunta_documento
+  - action: action_buscar_documento
+  - intent: nlu_fallback
+  - intent: pergunta_documento
+  - action: action_buscar_documento
+  - intent: nlu_fallback
+  - intent: pergunta_documento
+  - action: action_buscar_documento

@@ -1,0 +1,15 @@
+version: "3.1"
+
+nlu:
+- intent: pergunta_documento
+  examples: |
+    - Quando começam as aulas?
+    - Qual é o calendário acadêmico?
+    - Me mostre o edital do semestre
+    - Quero saber sobre a matrícula
+    - Onde vejo o cronograma?
+    - Quando é o período de inscrição?
+    - Qual a data da colação de grau?
+    - Que dia sai o resultado do vestibular?
+    - Onde posso encontrar os horários de aula?
+    - Me diga o período letivo do próximo semestre
