@@ -4,6 +4,14 @@ from rasa_sdk import Action, Tracker
 from sentence_transformers import SentenceTransformer
 import faiss, json
 
+
+modelo = SentenceTransformer("all-MiniLM-L6-v2")
+
+index = faiss.read_index('docs.index')
+
+with open('docs.json') as doc:
+    documentos = json.load(doc)
+
 class ActionBuscaDocumento(Action):
 
     def name(self) -> Text:
@@ -11,13 +19,6 @@ class ActionBuscaDocumento(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         pergunta_usuario = tracker.latest_message['text']
-
-        modelo = SentenceTransformer("all-MiniLM-L6-v2")
-
-        index = faiss.read_index('docs.index')
-
-        with open('docs.json') as doc:
-            documentos = json.load(doc)
 
         vetor_pergunta_usuario = modelo.encode([pergunta_usuario])
 

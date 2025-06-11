@@ -13,3 +13,19 @@ nlu:
     - Que dia sai o resultado do vestibular?
     - Onde posso encontrar os horários de aula?
     - Me diga o período letivo do próximo semestre
+
+- intent: saudacao
+  examples: |
+    - Olá
+    - Oi
+    - Tudo bem?
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+
+- intent: agradecimento
+  examples: |
+    - Obrigado
+    - Valeu
+    - Agradeço
+    - Gratidão

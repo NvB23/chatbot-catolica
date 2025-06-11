@@ -2,9 +2,19 @@ version: "3.1"
 
 intents:
   - pergunta_documento
+  - agradecimento
+  - saudacao
+
+responses:
+  utter_agradecimento:
+  - text: "De nada! Ficamos felizes em poder te ajudar! Fique a vontade para nos fazer alguma pergunta."
+
+  utter_saudacao:
+  - text: "Olá! Seja muito bem vindo ao ChatBot da Faculdade Católica da Paraíba. Para começar, digite alguma dúvida."
 
 actions:
   - action_buscar_documento
+
 
 
 session_config:
