@@ -22,12 +22,15 @@ class ActionBuscaDocumento(Action):
 
         vetor_pergunta_usuario = modelo.encode([pergunta_usuario])
 
-        _, posicoes = index.search(vetor_pergunta_usuario, 1)
+        distancia, posicoes = index.search(vetor_pergunta_usuario, 1)
+        LIMIAR = 0.8
+        if distancia[0][0] > LIMIAR:
+            dispatcher.utter_message(text="Lamentamos, mas não encontramos informações relacionadas a sua perguna. Se você precisar, pode entrar em contato conosco por meio do link https://catolicapb.com.br/fale-conosco")
+        else:
+            indice = posicoes[0][0]
+            resposta = documentos[indice]['conteudo']
 
-        indice = posicoes[0][0]
-        resposta = documentos[indice]['conteudo']
-
-        dispatcher.utter_message(text=resposta)
+            dispatcher.utter_message(text=resposta)
 
         return []
 
